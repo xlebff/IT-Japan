@@ -1,0 +1,139 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0 50px;
+}
+
+.navbar__logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    animation: navbar__element 2s forwards;
+}
+
+.navbar__logo:hover {
+    cursor: pointer;
+}
+
+.navbar__logo__circle {
+    background-color: #e50012;
+    border-radius: 50px;
+    height: 15px;
+    width: 15px;
+    margin: 0;
+    animation: logo_circle 2s;
+    box-shadow: 0 0 0 0 #0004;
+    aspect-ratio: 1;
+}
+
+@keyframes logo_circle {
+    100% {
+        box-shadow: 0 0 0 30px rgba(187, 29, 29, 0.432);
+    }
+}
+
+.navbar__logo__title {
+    font-size: 24px;
+}
+
+.navbar__list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.navbar__element {
+    transition: transform 0.5s ease;
+    animation: navbar__element 2s;
+}
+
+@keyframes navbar__element {
+    0% {
+        transform: translateY(30px);
+        opacity: 0%;
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.navbar__element a:link, .navbar__element a:visited {
+    text-decoration: none;    
+    color: #333;
+    color: #f0f0f0;
+}
+
+.navbar__element:hover {
+    transform: translateY(-3px);
+}
+
+.navbar__burger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.navbar__burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+    .navbar__burger {
+        display: block;
+    }
+
+    .navbar__list {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 70%;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        padding: 80px 20px 20px;
+        gap: 20px;
+        transition: left 0.3s ease;
+        z-index: 999;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        border-radius: 0 8px 8px 0;
+        color: #333;
+    }
+
+    .navbar__element a:link, .navbar__element a:visited, .navbar__element a {
+        text-decoration: none;    
+        color: #333;
+    }
+
+    .navbar__list.active {
+        left: 0;
+    }
+
+    .navbar__burger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .navbar__burger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar__burger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .no-scroll {
+        overflow: hidden;
+    }
+}
