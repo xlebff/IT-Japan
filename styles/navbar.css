@@ -61,10 +61,11 @@
     }
 }
 
-.navbar__element a:link, .navbar__element a:visited {
+.navbar__element a:link,
+.navbar__element a:visited {
     text-decoration: none;    
     color: #333;
-    color: #f0f0f0;
+    color: var(--text-color);
 }
 
 .navbar__element:hover {
@@ -136,4 +137,36 @@
     .no-scroll {
         overflow: hidden;
     }
+}
+
+.navbar__logo-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    color: var(--text-color);
+}
+
+.theme-icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    transition: transform 0.3s ease;
+    fill: currentColor;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover .theme-icon {
+    transform: rotate(20deg);
+    transform: rotate(20deg);
 }
