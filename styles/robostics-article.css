@@ -12,11 +12,11 @@
     justify-content: space-between;
     align-items: center;
     gap: 30px;
-
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.8);
     
     transform: scale(1);
+
+    border: 1px solid var(--card-border);
+    background-color: var(--card-bg);
 
     &:hover {
         transform: scale(1.2);
@@ -76,4 +76,10 @@
 .robostics-article.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+.robostics-article:hover {
+    box-shadow: 0 0 15px var(--shadow-color);
+    border-color: var(--text-color);
+    background-color: var(--card-bg);
 }
