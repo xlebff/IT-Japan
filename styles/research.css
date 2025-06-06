@@ -24,8 +24,8 @@
 
 .research-break {
     border: none;
-    background: radial-gradient(white, #08090d);
     margin-bottom: 50px;
     width: 80%;
     height: 2px;
+    background: var(--research-break);
 }
